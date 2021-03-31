@@ -1,4 +1,5 @@
 # Gravity Simulation
+![two stars](images/two_stars.gif)
 This program simulates the behaviour of objects in a 2D gravitational field. The simulation uses the Verlet integration method to solve the equation of motion of objects in the gravitational field.
 
 ## Building and Running The Program
