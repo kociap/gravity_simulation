@@ -23,22 +23,39 @@ endif()
 
 project(gravity_simulation)
 
+# Add anton_types
+FetchContent_Declare(
+    anton_types
+    GIT_REPOSITORY https://github.com/kociap/anton_types.git
+    GIT_TAG 1b25551af3b508a2dd560b15f4b2f1ac1879542c
+)
+FetchContent_MakeAvailable(anton_types)
+# Add anton_math
+FetchContent_Declare(
+    anton_math
+    GIT_REPOSITORY https://github.com/kociap/anton_math.git
+    GIT_TAG d28ae9df306f8ec1a93ff5bbc293917b7119897e
+)
+FetchContent_MakeAvailable(anton_math)
 # Add anton_core
 FetchContent_Declare(
     anton_core
     GIT_REPOSITORY https://github.com/kociap/anton_core.git
+    GIT_TAG 2c310a1d7b4e88b9822cf67fe417f0d1695d1f73
 )
 FetchContent_MakeAvailable(anton_core)
 # Add mimas
 FetchContent_Declare(
     mimas
     GIT_REPOSITORY https://github.com/kociap/mimas.git
+    GIT_TAG 3b81b83e1b19e0bf570742d6475153283436ca88
 )
 FetchContent_MakeAvailable(mimas)
 # Add glad
 FetchContent_Declare(
     glad
     GIT_REPOSITORY https://github.com/kociap/glad.git
+    GIT_TAG b4d4f69539196fdb08a56b88fd15b7287c838b87
 )
 FetchContent_MakeAvailable(glad)
 
