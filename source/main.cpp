@@ -290,6 +290,8 @@ int main(int argc, char** argv) {
     Entity const isolines_entity = world.create();
     world.add_component(isolines_entity, Isolines{square_mesh, isolines_shader});
     Isolines& isolines = world.get_component<Isolines>(isolines_entity);
+    isolines.enabled = true;
+    isolines.mode = Isolines::Render_Mode::contour_inverted;
 
     load_sim_data_from_file(world, executable_directory + "/sim.txt");
     for(Entity const e: world.entities<Point_Mass>()) {
