@@ -51,17 +51,14 @@ const vec4[32] color_lut = vec4[32](vec4(255.0 / 255.0, 0.0 / 255.0, 0.0 / 255.0
 
 void main() {
     vec2 accel = vec2(0, 0);
-    vec2 dv = vec2(0, 0);
     for(int i = 0; i < point_masses.length(); ++i) {
         vec2 dist_vec = point_masses[i].position - world_position;
         float dist = length(dist_vec);
         float accel_strength = 6.67408E-11 * point_masses[i].mass / dist / dist;
         vec2 dist_vec_norm = dist_vec / dist;
         accel += accel_strength * dist_vec_norm;
-        dv += accel_strength / dist * dist_vec_norm;
     }
 
-    float field_dv = length(dv);
     float field_strength = length(accel);
     float linear_strength = log(field_strength);
     float interval = log(max_field) / isoline_levels;
